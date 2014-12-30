@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E9CC42F-18B2-4DA1-839F-8EC2DB89B046}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HavokNet</RootNamespace>
+    <AssemblyName>HavokNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PcapDotNet.Base">
+      <HintPath>..\..\..\..\..\Downloads\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541.x64\PcapDotNet.DevelopersPack\3rdParty\PcapDotNet\PcapDotNet.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core">
+      <HintPath>..\..\..\..\..\Downloads\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541.x64\PcapDotNet.DevelopersPack\3rdParty\PcapDotNet\PcapDotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core.Extensions">
+      <HintPath>..\..\..\..\..\Downloads\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541.x64\PcapDotNet.DevelopersPack\3rdParty\PcapDotNet\PcapDotNet.Core.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Packets">
+      <HintPath>..\..\..\..\..\Downloads\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541\PcapDotNet.DevelopersPack.1.0.1.75541.x64\PcapDotNet.DevelopersPack\3rdParty\PcapDotNet\PcapDotNet.Packets.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\HavokException.cs" />
+    <Compile Include="Common\IPAddress.cs" />
+    <Compile Include="Common\IPv4Address.cs" />
+    <Compile Include="Common\IPv6Address.cs" />
+    <Compile Include="Common\MacAddress.cs" />
+    <Compile Include="Common\MacInformation.cs" />
+    <Compile Include="Common\PacketData.cs" />
+    <Compile Include="Common\RemoteEndpoint.cs" />
+    <Compile Include="Firewall\FirewallBase.cs" />
+    <Compile Include="Firewall\SimpleFirewall.cs" />
+    <Compile Include="Firewall\SimpleServiceRule.cs" />
+    <Compile Include="OSI\IPv4StackConfiguration.cs" />
+    <Compile Include="OSI\Layer2Packet.cs" />
+    <Compile Include="OSI\Layer2Protocol.cs" />
+    <Compile Include="OSI\Layer3Packet.cs" />
+    <Compile Include="OSI\Layer3Protocol.cs" />
+    <Compile Include="OSI\Layer4Packet.cs" />
+    <Compile Include="OSI\Layer4Protocol.cs" />
+    <Compile Include="OSI\Layer4TcpPacket.cs" />
+    <Compile Include="OSI\Layer4UdpPacket.cs" />
+    <Compile Include="OSI\Protocol.cs" />
+    <Compile Include="Protocols\ARP\ArpCacheEntry.cs" />
+    <Compile Include="Protocols\ARP\ArpClient.cs" />
+    <Compile Include="Protocols\ARP\ArpEntryType.cs" />
+    <Compile Include="Protocols\ARP\IpResolutionFailed.cs" />
+    <Compile Include="Protocols\DNS\ARecord.cs" />
+    <Compile Include="Protocols\DNS\CNAMERecord.cs" />
+    <Compile Include="Protocols\DNS\DnsEntry.cs" />
+    <Compile Include="Protocols\DNS\DnsClient.cs" />
+    <Compile Include="Protocols\DNS\DnsRecordType.cs" />
+    <Compile Include="Protocols\DNS\MXRecord.cs" />
+    <Compile Include="Protocols\DNS\MXRecordRow.cs" />
+    <Compile Include="Protocols\DNS\NSRecord.cs" />
+    <Compile Include="Protocols\DNS\PTRRecord.cs" />
+    <Compile Include="Protocols\HTTP\HttpChunk.cs" />
+    <Compile Include="Protocols\HTTP\HttpClient.cs" />
+    <Compile Include="Protocols\HTTP\HttpResponse.cs" />
+    <Compile Include="Protocols\HTTP\HttpResponseCode.cs" />
+    <Compile Include="Protocols\ICMP\IcmpClient.cs" />
+    <Compile Include="Protocols\ICMP\PingRequest.cs" />
+    <Compile Include="Protocols\ICMP\PingResult.cs" />
+    <Compile Include="Protocols\ICMP\PingResultType.cs" />
+    <Compile Include="Protocols\ICMP\PingSettings.cs" />
+    <Compile Include="Protocols\TCP\TcpClient.cs" />
+    <Compile Include="Protocols\TCP\TcpPacket.cs" />
+    <Compile Include="Protocols\TCP\TcpPort.cs" />
+    <Compile Include="Protocols\TCP\TcpPortStatus.cs" />
+    <Compile Include="Protocols\TCP\TcpSession.cs" />
+    <Compile Include="Protocols\TCP\TcpState.cs" />
+    <Compile Include="Stack\NetClient.cs" />
+    <Compile Include="Common\NetworkCard.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stack\PacketParser.cs" />
+    <Compile Include="Stack\PacketType.cs" />
+    <Compile Include="Toolset.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\MacLookup.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
